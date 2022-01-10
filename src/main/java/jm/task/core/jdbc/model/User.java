@@ -1,13 +1,12 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Entity
 @Table
 public class User {
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -66,7 +65,7 @@ public class User {
         return "\n" +  getClass().getSimpleName() + getId()
                 + " (Name: " + getName()
                 + ", LastName: " + getLastName()
-                + ", age: " + age
+                + ", age: " + getAge()
                 + ")";
     }
 }

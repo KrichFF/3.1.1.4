@@ -79,7 +79,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             Statement statement = conn.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * from user");
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 User user = new User();
                 user.setId(resultSet.getLong("id"));
                 user.setName(resultSet.getString("FirstName"));
@@ -89,8 +89,7 @@ public class UserDaoJDBCImpl implements UserDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             Util.disconnect(conn);
         }
         return list;
@@ -100,7 +99,7 @@ public class UserDaoJDBCImpl implements UserDao {
         conn = Util.getMySQLConnection();
         try {
             Statement statement = conn.createStatement();
-            statement.executeUpdate("TRUNCATE TABLE  user;");
+            statement.executeUpdate("TRUNCATE TABLE  user");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
