@@ -21,7 +21,7 @@ public class Main {
         userService.saveUser("4", "4", (byte) 4);
         System.out.println("Добавлен User4");
         System.out.println(userService.getAllUsers());
-//        userService.cleanUsersTable();
-//        userService.dropUsersTable();
+        userService.cleanUsersTable();
+        userService.dropUsersTable();
     }
 }
